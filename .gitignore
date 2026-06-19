@@ -1,0 +1,7 @@
+# MATLAB
+*.asv
+*.m~
+*.mat
+*.mex*
+slprj/
+octave-workspace
