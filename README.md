@@ -23,6 +23,18 @@ round-trip validation.
 <tr>
 <td valign="top">
 
+**At a glance**
+
+- 7-DOF KUKA LBR 4+ — closed-form, non-iterative inverse kinematics
+- Redundancy resolved through the extra axis **E1** (joint 3)
+- Enumerates all reachable solutions, joint-limit filtered
+- Forward-kinematics consistency check — no ghost solutions
+- Null-space (self-motion) analysis of the redundant arm
+- Round-trip validated to machine precision
+- Plain MATLAB/Octave, no toolboxes, fully documented
+
+**Sections**
+
 - [Overview](#overview)
 - [Background](#background)
 - [Method](#method)
@@ -37,7 +49,7 @@ round-trip validation.
 - [License](#license)
 
 </td>
-<td valign="top" width="45%">
+<td valign="top" width="40%">
 
 <!-- Add your rendered robot image to docs/kuka_lbr4.png -->
 <img src="docs/kuka_lbr4.png" alt="KUKA LBR 4+ with colour-coded joint rings" width="100%">
@@ -207,29 +219,29 @@ with a second wrist variant `q5' = q5 − π,  q6' = −q6,  q7' = q7 + π`.
 
 ## Kinematic model
 
-Standard Denavit–Hartenberg parameters of the KUKA LBR 4+. Joint 3 is the
-redundancy axis **E1**. The θ badges are colour-matched to the joint rings in
-the render.
-
 <table>
 <tr>
-<td width="40%" valign="middle">
+<td width="38%" valign="top">
 
 <!-- Add your rendered robot image to docs/kuka_lbr4.png -->
 <img src="docs/kuka_lbr4.png" alt="KUKA LBR 4+ with colour-coded joint rings" width="100%">
 
 </td>
-<td valign="middle">
+<td valign="top">
 
-| Frame | d [mm] | θ | a [mm] | α |
-|:-----:|:------:|:--------------------------------------------------:|:-----:|:----:|
-| 1     | 310.5  | ![q1](https://img.shields.io/badge/-q1-1f3a93)     | 0     | π/2  |
-| 2     | 0      | ![q2](https://img.shields.io/badge/-q2-e67e22)     | 0     | −π/2 |
-| 3 (E1)| 400    | ![q3](https://img.shields.io/badge/-q3-27ae60)     | 0     | −π/2 |
-| 4     | 0      | ![q4](https://img.shields.io/badge/-q4-2e86de)     | 0     | π/2  |
-| 5     | 390    | ![q5](https://img.shields.io/badge/-q5-8e44ad)     | 0     | π/2  |
-| 6     | 0      | ![q6](https://img.shields.io/badge/-q6-e74c3c)     | 0     | −π/2 |
-| 7     | 78     | ![q7](https://img.shields.io/badge/-q7-f1c40f)     | 0     | 0    |
+Standard Denavit–Hartenberg parameters of the KUKA LBR 4+. Joint 3 is the
+redundancy axis **E1**. The θ badges are colour-matched to the joint rings in
+the render.
+
+| Frame        | d [mm] | θ | a [mm] | α |
+|:------------:|:------:|:--------------------------------------------------:|:-----:|:----:|
+| Joint 1      | 310.5  | ![q1](https://img.shields.io/badge/-q1-1f3a93)     | 0     | π/2  |
+| Joint 2      | 0      | ![q2](https://img.shields.io/badge/-q2-e67e22)     | 0     | −π/2 |
+| Joint 3 (E1) | 400    | ![q3](https://img.shields.io/badge/-q3-27ae60)     | 0     | −π/2 |
+| Joint 4      | 0      | ![q4](https://img.shields.io/badge/-q4-2e86de)     | 0     | π/2  |
+| Joint 5      | 390    | ![q5](https://img.shields.io/badge/-q5-8e44ad)     | 0     | π/2  |
+| Joint 6      | 0      | ![q6](https://img.shields.io/badge/-q6-e74c3c)     | 0     | −π/2 |
+| Joint 7      | 78     | ![q7](https://img.shields.io/badge/-q7-f1c40f)     | 0     | 0    |
 
 </td>
 </tr>
