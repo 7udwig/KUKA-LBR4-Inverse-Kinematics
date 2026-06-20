@@ -13,12 +13,15 @@ analysis showing the self-motion of the arm as E1 is varied, and a numerical
 round-trip validation.
 
 > The kinematic parameters in this code are those of the **KUKA LBR 4+ / LWR IV+**.
-> The same geometric method applies to the **LBR iiwa** (on which the original
-> derivation was taught); only the DH parameters and joint limits change.
+> The same geometric method applies to the **LBR iiwa**; only the DH parameters and joint limits change.
 
 ---
 
 ## Contents
+
+<table>
+<tr>
+<td valign="top">
 
 - [Overview](#overview)
 - [Background](#background)
@@ -32,6 +35,16 @@ round-trip validation.
 - [Implementation notes and pitfalls](#implementation-notes-and-pitfalls)
 - [References](#references)
 - [License](#license)
+
+</td>
+<td valign="top" width="45%">
+
+<!-- Add your rendered robot image to docs/kuka_lbr4.png -->
+<img src="docs/kuka_lbr4.png" alt="KUKA LBR 4+ with colour-coded joint rings" width="100%">
+
+</td>
+</tr>
+</table>
 
 ---
 
@@ -381,10 +394,9 @@ keep the pose reachable yield solutions during the null-space sweep.
   arguments can drift just outside their domain. The wrist `acos` is clamped to
   [−1, 1]; complex candidates are discarded by the consistency check.
 
-This is a cleaned-up, fully translated version of an earlier university project;
-the mathematics is unchanged. One historical quirk is kept on purpose and
-flagged with an inline `NOTE` in `inverse_kinematics.m` (a chained `==`
-comparison that MATLAB evaluates left-to-right rather than as a logical AND).
+This is a cleaned-up, fully translated version of an earlier university project.
+The mathematics of the original solver is unchanged; only the joint-limit and
+forward-kinematics consistency checks described above were added.
 
 ---
 
@@ -408,7 +420,7 @@ Pieper/Craig closed-form approach for manipulators with a spherical wrist.
   mechanisms based on matrices.* Journal of Applied Mechanics.
 - Siciliano, B., Sciavicco, L., Villani, L. & Oriolo, G. (2009). *Robotics:
   Modelling, Planning and Control.* Springer.
-- KUKA Roboter GmbH — LBR 4+ / LWR product documentation (kinematic parameters
+- KUKA — LBR 4+ / LWR product documentation (kinematic parameters
   and joint limits).
 
 ---
@@ -416,5 +428,4 @@ Pieper/Craig closed-form approach for manipulators with a spherical wrist.
 ## License
 
 Released under the **MIT License** — free to use, modify, and distribute with
-attribution. See [LICENSE](LICENSE). Replace `<Your Name>` in the license header
-before publishing.
+attribution.

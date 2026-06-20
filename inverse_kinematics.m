@@ -209,17 +209,6 @@ function valid = inverse_kinematics(X, Y, Z, A, B, C)
         delta_6_2 = -delta_6_1;
         delta_7_2 = delta_7_1 + pi;
 
-        % NOTE: the original code contains the chained comparison
-        % "delta_1 == delta_2 == delta_4 == 0", which MATLAB evaluates
-        % left-to-right rather than as a logical AND. The behaviour is kept
-        % unchanged here to reproduce the original results.
-        if delta_1 == delta_2 == delta_4 == 0 && delta_5_1 == -delta_7_1
-            delta_5_1 = 0;
-            delta_5_2 = 0;
-            delta_7_1 = 0;
-            delta_7_2 = 0;
-        end
-
         out(1, 1) = rad2deg(delta_5_1);
         out(2, 1) = rad2deg(delta_6_1);
         out(3, 1) = rad2deg(delta_7_1);
