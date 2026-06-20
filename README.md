@@ -37,7 +37,7 @@ round-trip validation.
 - [License](#license)
 
 </td>
-<td valign="top" width="45%">
+<td valign="top" width="35%">
 
 <!-- Add your rendered robot image to docs/kuka_lbr4.png -->
 <img src="docs/kuka_lbr4.png" alt="KUKA LBR 4+ with colour-coded joint rings" width="100%">
