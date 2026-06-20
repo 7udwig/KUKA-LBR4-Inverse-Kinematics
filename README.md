@@ -217,9 +217,9 @@ with a second wrist variant `q5' = q5 − π,  q6' = −q6,  q7' = q7 + π`.
 </td>
 <td valign="top">
 
-Standard Denavit–Hartenberg parameters of the KUKA LBR 4+. Joint 3 is the
-redundancy axis **E1**. The θ badges are colour-matched to the joint rings in
-the render.
+Standard Denavit–Hartenberg parameters of the KUKA LBR 4+. <br/>
+Joint 3 is the redundancy axis **E1**. <br/>
+The θ badges are colour-matched to the joint rings in the render.
 
 | Frame        | d [mm] | θ | a [mm] | α |
 |:------------:|:------:|:--------------------------------------------------:|:-----:|:----:|
