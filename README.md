@@ -33,7 +33,7 @@ round-trip validation.
 - Round-trip validated to machine precision
 - Plain MATLAB/Octave, no toolboxes, fully documented
 
-**Sections**
+<hr>
 
 - [Overview](#overview)
 - [Background](#background)
@@ -49,7 +49,7 @@ round-trip validation.
 - [License](#license)
 
 </td>
-<td valign="top" width="40%">
+<td valign="top" width="45%">
 
 <!-- Add your rendered robot image to docs/kuka_lbr4.png -->
 <img src="docs/kuka_lbr4.png" alt="KUKA LBR 4+ with colour-coded joint rings" width="100%">
@@ -243,13 +243,13 @@ the render.
 | Joint 6      | 0      | ![q6](https://img.shields.io/badge/-q6-e74c3c)     | 0     | −π/2 |
 | Joint 7      | 78     | ![q7](https://img.shields.io/badge/-q7-f1c40f)     | 0     | 0    |
 
-</td>
-</tr>
-</table>
-
 > **Note on Joint 2:** the IK returns axis 2 as the geometric angle, which is
 > the DH angle θ₂ plus 90°. Equivalently, KUKA reports axis 2 with a −90° home
 > offset relative to θ₂ (see `demo.m` and `validate.m`).
+
+</td>
+</tr>
+</table>
 
 ### Joint limits (as used in the code)
 
